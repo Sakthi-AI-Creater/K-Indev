@@ -1,0 +1,414 @@
+/* ============================================
+   K-INDEV Logistics — Login Page Stylesheet
+   ============================================ */
+
+/* Google Font import */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Sora', 'Segoe UI', sans-serif;
+  background: #0a1628;
+}
+
+/* ---- Page Wrapper ---- */
+.login-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0a1628 0%, #0d2044 40%, #0a3060 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- Glow Orbs ---- */
+.glow-orb-1 {
+  position: absolute;
+  top: -80px;
+  right: 10%;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(30,100,200,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.glow-orb-2 {
+  position: absolute;
+  bottom: -100px;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,70,180,0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ---- Card ---- */
+.login-card {
+  display: flex;
+  width: 820px;
+  max-width: 95vw;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.07);
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   BACKGROUND PANEL (Left Side)
+   ============================================ */
+
+.bg-panel {
+  width: 300px;
+  flex-shrink: 0;
+  background: linear-gradient(160deg, #0d2654 0%, #0a3878 60%, #1155aa 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-panel__pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(100,180,255,0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.bg-panel__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.bg-panel__logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.bg-panel__globe {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e5eb8 0%, #0d3d8f 100%);
+  border: 3px solid rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.bg-panel__brand-text {
+  text-align: center;
+}
+
+.bg-panel__brand-main {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  line-height: 1;
+}
+
+.bg-panel__brand-main .k-letter {
+  color: #f4a223;
+}
+
+.bg-panel__brand-sub {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.55);
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.bg-panel__member-badge {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.05em;
+}
+
+.kln-badge {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.bg-panel__tagline {
+  margin-top: 36px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  line-height: 1.7;
+  max-width: 180px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   LOGIN FORM (Right Side)
+   ============================================ */
+
+.login-form {
+  flex: 1;
+  background: #ffffff;
+  padding: 56px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form__heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d1b2e;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.login-form__subheading {
+  font-size: 13.5px;
+  color: #8a97a8;
+  margin-bottom: 36px;
+  line-height: 1.5;
+}
+
+.login-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.login-form__forgot {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-form__forgot-link {
+  font-size: 13px;
+  color: #1a6fc4;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.login-form__forgot-link:hover {
+  text-decoration: underline;
+}
+
+.login-form__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.login-form__divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e8edf3;
+}
+
+.login-form__divider-text {
+  font-size: 12px;
+  color: #b0bbc8;
+  white-space: nowrap;
+}
+
+.login-form__footer {
+  margin-top: 32px;
+  font-size: 11.5px;
+  color: #b0bbc8;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ============================================
+   INPUT FIELD
+   ============================================ */
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.input-field__label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #3d4f63;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.input-field__wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #dde3eb;
+  border-radius: 10px;
+  padding: 0 14px;
+  height: 48px;
+  background: #fafbfc;
+  transition: border-color 0.18s, background 0.18s;
+  gap: 10px;
+}
+
+.input-field__wrap:focus-within {
+  border-color: #1a6fc4;
+  background: #f5f9ff;
+}
+
+.input-field__wrap:focus-within .input-field__icon {
+  color: #1a6fc4;
+}
+
+.input-field__icon {
+  color: #9baab8;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.18s;
+}
+
+.input-field__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14.5px;
+  color: #0d1b2e;
+  font-family: inherit;
+}
+
+.input-field__input::placeholder {
+  color: #b0bbc8;
+}
+
+.input-field__eye-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: #9baab8;
+  flex-shrink: 0;
+}
+
+.input-field__eye-btn:hover {
+  color: #1a6fc4;
+}
+
+/* ============================================
+   SIGN IN BUTTON
+   ============================================ */
+
+.sign-in-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #1a6fc4 0%, #1250ad 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(26,111,196,0.3);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.sign-in-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1560c0 0%, #0d45a0 100%);
+  box-shadow: 0 6px 24px rgba(26,111,196,0.45);
+  transform: translateY(-1px);
+}
+
+.sign-in-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.sign-in-btn__spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 640px) {
+  .login-card {
+    flex-direction: column;
+    max-width: 96vw;
+  }
+
+  .bg-panel {
+    width: 100%;
+    padding: 32px 24px;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .bg-panel__tagline {
+    display: none;
+  }
+
+  .login-form {
+    padding: 36px 28px;
+  }
+}
